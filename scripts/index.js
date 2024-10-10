@@ -1,4 +1,4 @@
-const allFoodFetch = async(showAllButton) => {
+const allFoodFetch = async(showAllButton,searchInputText) => {
     const response = await fetch ('https://www.themealdb.com/api/json/v1/1/filter.php?i');
     const data = await response.json();
     if(showAllButton === true){
@@ -14,7 +14,6 @@ allFoodFetch()
 const loadFoodCards = (meals) => {
     const foodCardsContainer = document.getElementById('food-cards-container');
     foodCardsContainer.innerHTML = "";
-    console.log(meals.length)
     meals.forEach(meal => {
         const {strMeal,strMealThumb} = meal;
         const newDiv = document.createElement('div');
@@ -35,4 +34,10 @@ const loadFoodCards = (meals) => {
 
 const showAllButton = () => {
     allFoodFetch(true);
+}
+
+const searchButton = () => {
+    const searchInputText = document.getElementById('search-input').value;
+    document.getElementById('search-input').value = "";
+    allFoodFetch(false,searchInputText);
 }
