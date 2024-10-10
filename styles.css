@@ -4,3 +4,19 @@
 .font-poppins{
     font-family: "Poppins", sans-serif;
 }
+
+/* Button */
+.button{
+    background-color: #FFC107;
+    border-radius: 0.5rem;
+    font-size: 20px;
+    font-weight: 700;
+    color: #100F0F;
+    padding: 1rem 2.5rem;
+}
+
+/* Banner Background Image */
+
+.banner-bg-image{
+    background-image: url(./images/banner_1.png);
+}
